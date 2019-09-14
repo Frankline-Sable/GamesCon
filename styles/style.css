@@ -1,0 +1,445 @@
+@charset "utf-8";
+/* CSS Document */
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face{
+    font-family:"mishka";
+    src: url("../fonts/HLT Mishka.ttf")format("opentype");
+}
+
+body, html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    position: relative;
+}
+
+/* To secure correct behaviour in old browsers */
+header, section, footer, aside, nav, main, article, figure {
+    display: block;
+}
+
+
+.hero {
+    text-shadow: 0 3px 3px rgba(105, 14, 14, 0.66);
+    -webkit-background-image: url('../images/hero-1.jpg');
+    -webkit-background-origin: border-box;
+    -webkit-background-size: cover;
+    background-blend-mode: soft-light;
+    background-origin: border-box;
+    background-size: cover;
+    background: rgb(138, 58, 58) url('../images/hero-1.jpg') no-repeat scroll center;
+    background-size: cover;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}.page-bg {
+    background: url('../images/backgrounds/pg1-background.png');
+    background-clip: border-box;
+    background-repeat: repeat-y;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+.page2-bg {
+    background: url('../images/backgrounds/pg2-background.png');
+    background-clip: border-box;
+    background-repeat: repeat-y;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+.page3-bg {
+    background-blend-mode: soft-light;
+    background: rgba(63, 63, 63, 0.89) url('../images/backgrounds/pg1-background.png');
+    background-clip: border-box;
+
+    background-repeat: repeat-y;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+.page4-bg {
+    background-blend-mode: soft-light;
+    background: rgba(63, 63, 63, 0.89) url('../images/backgrounds/pg1-background.png');
+    background-clip: border-box;
+
+    background-repeat: repeat-y;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+.page5-bg {
+    background-blend-mode: darken;
+    background: rgb(244, 67, 54) url('../images/backgrounds/pg1-background.png');
+    background-clip: border-box;
+
+    background-repeat: repeat-y;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+header {
+    width: 100%;
+    height: 100%;
+}
+
+.w3-sidenav {
+    height: 100%;
+    width: 200px;
+    background-color: #fff;
+    position: fixed !important;
+    z-index: 1;
+    overflow: auto
+}
+
+.w3-closenav {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    padding: 0 !important;
+}
+
+.cap {
+    text-transform: uppercase;
+}
+
+.giveawjay-title {
+    color: #fff !important;
+    background-color: #f44336 !important;
+    font-size: 18px;
+    min-width: 100%;
+    text-align: center;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.giveaway-title h1 {
+    font-size: 72px;
+    font-weight: 900;
+    text-shadow: 1px 1px 0 #f44336;
+
+}
+
+.giveaway-title {
+
+    background-color: rgba(244, 67, 54, 0.64);
+    padding: 4px 24px;
+
+    color: #ffd3d8;
+
+}
+
+nav ul li {
+    padding: 0 16px;
+}
+
+
+.clickable {
+    cursor: pointer;
+}
+.hamburger{
+    margin: 2px 0 0;
+}
+
+.hamburger div {
+    width: 32px;
+    height: 5px;
+    margin: 5px 0;
+    background-color: white;
+    -o-transition: 0.3s ease-in-out;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+/* Rotate first bar */
+.changeHam .bar1 {
+    -webkit-transform: rotate(-60deg) translate(-20px, 4px);
+    transform: rotate(-60deg) translate(-8px, -3px);
+}
+
+/* Fade out the second bar */
+.changeHam .bar2 {
+    -webkit-transform: translate(0px, 25px);
+    transform: translate(0px, 10px);
+}
+
+/* Rotate last bar */
+.changeHam .bar3 {
+    -webkit-transform: rotate(60deg) translate(5px, -6px);
+    transform: rotate(60deg) translate(-7px, -12px);
+}
+
+aside {
+    height: 100%;
+    background-color: white;
+    width: 0;
+    right: -1%;
+    top: 0;
+    margin-top: 62px;
+    margin-right: 1px;
+    position: fixed !important;
+    z-index: 3;
+    overflow: auto;
+    border: 0;
+    text-align: center;
+    -webkit-transition: 0.5s;
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+aside a {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-right: 10px;
+    display: block;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+
+}
+
+aside a:hover {
+    background-color: rgba(0, 0, 0, 0.61);
+    color: #111111;
+}
+
+
+aside a div:hover {
+    opacity: 0.7;
+}
+
+aside a div {
+    position: fixed;
+    right: 65px;
+    background-color: white;
+    padding: 16px 24px 16px 32px;
+    margin-top: -48px;
+    z-index: 1;
+    display: none;
+}
+
+aside a div::after {
+    content: "";
+    position: absolute;
+    top: 22px;
+    left: 10%;
+    margin-left: -5px;
+    border: 5px solid transparent;
+    border-top-color: #555;
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg)
+}
+
+.nav-anim-1 {
+    animation: bg-no-scroll 1s ease-in forwards;
+    -webkit-animation: bg-no-scroll 1s ease-in forwards;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes bg-no-scroll {
+    from {
+        background-color: rgba(244, 67, 54, 0.8)
+    }
+    to {
+        background-color: rgba(244, 67, 54, 0.95)
+    }
+}
+
+/* Standard syntax */
+@keyframes bg-no-scroll {
+    from {
+        background-color: rgba(244, 67, 54, 0.8)
+    }
+    to {
+        background-color: rgba(244, 67, 54, 0.95)
+    }
+}
+
+.nav-anim-2 {
+    animation: bg-scroll 2s ease-out forwards;
+    -webkit-animation: bg-scroll 2s ease-out forwards;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes bg-scroll {
+    from {
+        background-color: rgba(244, 67, 54, 0.95)
+    }
+    to {
+        background-color: rgba(244, 67, 54, 0.7)
+    }
+}
+
+/* Standard syntax */
+@keyframes bg-scroll {
+    from {
+        background-color: rgba(244, 67, 54, 0.95)
+    }
+    to {
+        background-color: rgba(244, 67, 54, 0.7)
+    }
+}
+
+.w3-table-all tr:nth-child(odd) {
+    background-color: rgba(244, 67, 54, 0.8)
+}
+
+.w3-table-all tr:nth-child(even) {
+    background-color: rgba(135, 33, 21, 0.8)
+}
+
+footer {
+    border-top: 5px solid black;
+
+    -webkit-border-image: repeating-linear-gradient(135deg, #3498db, #3498db 7px, #f4f8fa 7px, #f4f8fa 14px, #ff5e37 14px, #ff5e37 21px, #f4f8fa 21px, #f4f8fa 28px) 1% round;
+    -moz-border-image: repeating-linear-gradient(135deg, #3498db, #3498db 7px, #f4f8fa 7px, #f4f8fa 14px, #ff5e37 14px, #ff5e37 21px, #f4f8fa 21px, #f4f8fa 28px) 1% round;
+    -o-border-image: repeating-linear-gradient(135deg, #3498db, #3498db 7px, #f4f8fa 7px, #f4f8fa 14px, #ff5e37 14px, #ff5e37 21px, #f4f8fa 21px, #f4f8fa 28px) 1% round;
+    border-image: repeating-linear-gradient(135deg, #3498db, #3498db 7px, #f4f8fa 7px, #f4f8fa 14px, #ff5e37 14px, #ff5e37 21px, #f4f8fa 21px, #f4f8fa 28px) 1% round;
+    border-left: 0;
+    border-right: 0;
+    padding: 15px;
+
+    max-height: 5000em;
+    background-color: rgb(40, 52, 66);
+    background-image: none;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-position-x: 0;
+    background-position-y: 0;
+    background-size: auto auto;
+
+    z-index: -1;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.close-nav {
+    position: absolute;
+    top: 1%;
+    right: 10px;
+    font-size: 36px;
+    margin-left: 50px;
+    padding: 0 12px;
+
+}
+.scroll-top {
+    position: absolute;
+    margin-top: 16px;
+    right: 0;
+
+}
+
+.loader {
+    border: 16px solid rgba(244, 67, 54, 1);
+    border-radius: 50%;
+    border-top: 16px solid rgba(244, 67, 54, 0.48);
+    border-bottom: 16px solid rgba(244, 67, 54, 0.53);
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.w3-top{
+    z-index: 4;
+}
+
+.w3-animate-input:focus {
+    width: 90% !important
+}
+.w3-overlay {
+
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 2
+}
+
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width:100%; /* Set a default minimum width */
+    left: 0;
+    right: 0;
+    position: fixed; /* Sit on top of the screen */
+    z-index: 5; /* Add a z-index if needed */
+    bottom: 20px; /* 30px from the bottom */
+}
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 20px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 20px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 20px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 20px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+header .horror-mode{
+    background-color: rgba(244,67,54,0.33);
+
+}
+header .horror-mode:hover{
+    background-color: rgba(244,67,54,.8)
+}

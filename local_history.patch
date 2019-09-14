@@ -1,0 +1,585 @@
+Index: index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- index.html	(date 1565990467398)
++++ index.html	(date 1565990467398)
+@@ -1,540 +1,44 @@
+-<!doctype html>
++<!DOCTYPE html>
+ <html>
+-<head>
++  <head>
+     <meta charset="utf-8">
+-    <title>GamesCon</title>
+-    <script type="text/javascript" src="styles/JQuery/jquery-3.3.1.min.js"></script>
+-    <script src="scripts/angular.min.js"></script>
+-    <link href="styles/w3css/w3.css" rel="stylesheet">
+-    <link href="styles/fontawesome/css/all.css" rel="stylesheet">
+-    <link href="styles/fontawesomeold/css/font-awesome.css" rel="stylesheet">
+-    <link rel="stylesheet" type="text/css" href="styles/style.css">
+-    <link rel="stylesheet" type="text/css" href="styles/responsiveness.css">
++    <meta name="viewport" content="width=device-width, initial-scale=1">
++    <title>Welcome to Firebase Hosting</title>
+ 
++    <!-- update the version number as needed -->
++    <script defer src="/__/firebase/6.3.5/firebase-app.js"></script>
++    <!-- include only the Firebase features as you need -->
++    <script defer src="/__/firebase/6.3.5/firebase-auth.js"></script>
++    <script defer src="/__/firebase/6.3.5/firebase-database.js"></script>
++    <script defer src="/__/firebase/6.3.5/firebase-messaging.js"></script>
++    <script defer src="/__/firebase/6.3.5/firebase-storage.js"></script>
++    <!-- initialize the SDK after all desired features are loaded -->
++    <script defer src="/__/firebase/init.js"></script>
+ 
+-
+-</head>
+-
+-<body>
+-
+-<aside class="page5-bg w3-card-4  icon-bar w3-clear w3-rned" id="sideNav">
+-    <a class="active scroll-down w3-hover-opacity" href="#home" onMouseOver="showTip(1);" onmouseleave="hideTip(1);"><i
+-            class="fas fa-home fa-3x w3-text-shadow w3-text-white "></i>
+-        <div id="tip1" class="w3-animate-zoom tip">Home</div>
+-    </a>
+-    <hr>
+-    <fieldset class="" style="border-style: dotted">
+-        <legend class="w3-tiny w3-left-align w3-white">Categories</legend>
+-        <a href="#Action-Adventure" class="scroll-down" onMouseOver="showTip(2);" onmouseleave="hideTip(2);">
+-            <img src="images/action.png" style="width: 100%">
+-            <div id="tip2" class="w3-animate-zoom tip w3-red">Action <i class="fa fa-gamepad"></i></div>
+-        </a>
+-        <a href="#Horror-Creepy" class="scroll-down" onMouseOver="showTip(3);" onmouseleave="hideTip(3);">
+-            <img src="images/horror.png" style="width: 100%">
+-            <div id="tip3" class="w3-animate-zoom tip w3-red">Horror <i class="fa fa-gamepad"></i></div>
+-        </a>
+-        <a href="#Racing-Simulation" class="scroll-down" onMouseOver="showTip(4);" onmouseleave="hideTip(4);">
+-            <img src="images/racing.png" style="width: 100%">
+-            <div id="tip4" class="w3-animate-zoom tip w3-red">Racing <i class="fa fa-gamepad"></i></div>
+-        </a>
+-    </fieldset>
+-    <hr>
+-    <a href="#request" class="scroll-down w3-hover-opacity" onMouseOver="showTip(5);" onmouseleave="hideTip(5);"><i
+-            class="fas fa-question-circle w3-text-white w3-text-shadow fa-3x"></i>
+-        <div id="tip5" class="w3-animate-zoom tip">Special/Request</div>
+-    </a>
+-    <a href="#contact" class="scroll-down w3-hover-opacity" onMouseOver="showTip(6);" onmouseleave="hideTip(6);"><i
+-            class="fas fa-address-book fa-3x w3-text-white w3-text-shadow"></i>
+-        <div id="tip6" class="w3-animate-zoom tip">Contact me</div>
+-    </a>
+-</aside>
+-
+-<section class="w3-sidenav w3-red w3-animate-left" id="userAside">
+-    <div onclick="userAside_Close();"
+-         class="close-nav w3-xxlarge w3-text-white clickable w3-hover-opacity w3-hover-shadow"> &times;
++    <style media="screen">
++      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
++      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
++      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
++      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
++      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
++      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
++      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
++      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
++      @media (max-width: 600px) {
++        body, #message { margin-top: 0; background: white; box-shadow: none; }
++        body { border-top: 16px solid #ffa100; }
++      }
++    </style>
++  </head>
++  <body>
++    <div id="message">
++      <h2>Welcome</h2>
++      <h1>Firebase Hosting Setup Complete</h1>
++      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
++      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+     </div>
+-
+-    <div class="w3-modal " style="position: absolute;background-color: rgba(0,0,0,0.7)"
+-         id="error-dialog">
+-        <div class="w3-display-container" style="height: 100%;">
+-            <p class="w3-red w3-padding-large w3-center w3-display-middle w3-animate-bottom" id="error-msg"><i
+-                    class="fa fa-info w3-text-white w3-text-shadow fa-2x"></i> <br>Empty!
+-            </p>
+-        </div>
+-    </div>
+-
+-    <div>
+-        <div class="w3-container w3-red" style="padding: 7px 4px;">
+-            <h4 class="" style="font-style: oblique; text-transform: capitalize" id="side-title">Sign-in to start
+-                purchase <i class="fa fa-sign-in"></i></h4>
+-        </div>
+-        <div class="w3-display-container w3-center">
+-            <img src="images/sidenav-bg.png" style="width: 100%;height: 192px">
+-            <div class="w3-display-middle" style="width: 100%;height: 192px; overflow: hidden; text-overflow: ellipsis">
+-                <div class="w3-circle"
+-                     style="border: 5px solid;border-style: groove;border-image: url('images/sidenav-bg.png') 50%  stretch"
+-                     id="side-userImage">
+-                    <i class="fa fa-user-circle-o fa-5x w3-text-shadow w3-text-red"
+-                       style="font-size: 92px"></i>
+-                </div>
+-
+-                <div class=" w3-text-white w3-center">
+-
+-                    <h4 class="w3-xlarge" id="side-userInfomation">Unknown shopper<br><span
+-                            class="w3-medium w3-text-light-gray w3-padding-small w3-round-xxlarge"
+-                            style="background-color: rgba(244,67,54,0.5)">You can purchase anything once you sign in! </span>
+-                    </h4>
+-                </div>
+-            </div>
+-            <div class="w3-display-topright w3-large w3-red  w3-hide"
+-                 style="font-weight: 600;border-bottom: 1px solid #903233" id="logOutButton">
+-                <div class="w3-right-align w3-padding-small w3-margin-0">
+-                    <span class=" w3-hover-opacity clickable" onclick="HandleSignOut();">Log out <i
+-                            class="fa fa-sign-out"></i> </span>
+-                </div>
+-            </div>
+-
+-            <div class="w3-display-topleft w3-large w3-red  w3-hide"
+-                 style="font-weight: 600;border-bottom: 1px solid #903233" id="adminPanel">
+-                <div class="w3-right-align w3-padding-small w3-margin-0">
+-                    <span class=" w3-hover-opacity clickable" onclick="formNavig('userTab','adminTab')"><i
+-                            class="fas fa-toolbox"></i>  Admin</span>
+-                </div>
+-            </div>
+-        </div>
+-
+-    </div>
+-
+-    <div id="unknownUserNav" class="w3-animate-opacity">
+-
+-
+-        <form class="w3-form w3-animate-left" action="javascript:signInExistingUser('loginForm');"
+-              name="loginForm"
+-              method="post"
+-              id="signinForm"
+-              autocomplete="off">
+-            <label style="font-weight:600; text-shadow: 1px 1px 0 #f44336;" class="w3-text-white w3-large"><i
+-                    class="fa fa-user-circle w3-text-red w3-text-white"></i> Username(Email)</label>
+-            <input class="w3-input w3-border" type="text" name="_userField" placeholder="Enter user name here" required
+-                   maxlength="20" pattern="[A-Za-z][A-Za-z+0-9+@]*.com" title="Email address is invalid!">
+-            <br>
+-
+-            <label style="font-weight:600; text-shadow: 1px 1px 0 #f44336;" class="w3-text-white  w3-large"><i
+-                    class="fa fa-lock w3-text-red w3-text-white"></i> Password</label>
+-            <input class="w3-input w3-border" type="password" name="_passField" placeholder="Enter Password here"
+-                   required maxlength="20">
+-            <br>
+-
+-            <button class="w3-btn-block w3-wide w3-round-xlarge w3-section w3-padding w3-red w3-card-2 w3-border w3-hover-opacity w3-text-white w3-hover-"
+-                    type="submit"><b>LOG IN</b> <i
+-                    class="fa fa-sign-in"></i>
+-            </button>
+-
+-            <hr style="margin-bottom: 12px">
+-            <div class="w3-right-align w3-hover-opacity w3-padding-0 w3-margin-0"
+-            >
+-                <span class=" clickable" onclick="formNavig('signinForm','forgotPassForm')">Forgot password?</span>
+-            </div>
+-
+-            <div class="w3-left-align clickable w3-opacity w3-padding-0 w3-margin-0 w3-hover-opacity-off"
+-                 style="text-decoration: underline" onclick="formNavig('signinForm','signupForm')">
+-                Create New Account
+-            </div>
+-
+-
+-        </form>
+-
+-        <form class="w3-form w3-animate-left w3-hide" action="javascript:userForgotPass('passRstForm');"
+-              id="forgotPassForm"
+-              name="passRstForm"
+-              autocomplete="off">
+-            <fieldset class="w3-padding-0 w3-margin-0 w3-border-0">
+-                <legend class="w3-white w3-text-red w3-padding-small"> Recover your Account</legend>
+-                <br>
+-                <label style="font-weight:600; text-shadow: 1px 1px 0 #f44336;" class="w3-text-white w3-large"><i
+-                        class="fa fa-user-circle w3-text-red w3-text-white"></i> Remind us your email?</label>
+-                <input class="w3-input w3-border" type="text" name="_userField" placeholder="Enter email here" required
+-                       maxlength="20" pattern="[A-Za-z][A-Za-z+0-9+@]*.com" title="Email address is invalid!">
+-                <br>
+-
+-                <button class="w3-btn-block w3-wide w3-round-xlarge w3-section w3-padding w3-red w3-card-2 w3-border w3-hover-opacity w3-text-white w3-hover-"
+-                        type="submit"><b>Retrieve Password</b> <i class="fa fa-search"></i>
+-                </button>
+-                <hr>
+-                <br>
+-                <div class="w3-right-align w3-padding-0 w3-margin-0"
+-                >
+-                    <i class="fa fa-chevron-left"></i> <span class="clickable w3-hover-opacity"
+-                                                             onclick="formNavig('forgotPassForm','signinForm')"> Back to sign in</span>
+-                </div>
+-
+-            </fieldset>
+-        </form>
+-
+-        <form class="w3-form w3-animate-left w3-hide" autocomplete="off"
+-              action="javascript:signUpNewuser('signupForm');" method="post"
+-              name="signupForm" id="signupForm" enctype="multipart/form-data">
+-            <label style="font-weight:600; text-shadow: 1px 1px 0 #f44336;" class="w3-text-white w3-large"><i
+-                    class="fa fa-user-circle w3-text-red w3-text-white"></i> FullNames</label>
+-            <input class="w3-input w3-border" type="text" name="_nameField" placeholder="First & Second Name" required
+-                   max="30" pattern="[A-Z][A-Za-z+0-9+']*[ ][A-Z][A-Za-z+0-9+']*"
+-                   title="Two names start with capital letter">
+-            <br>
+-            <label style="font-weight:600; text-shadow: 1px 1px 0 #f44336;" class="w3-text-white w3-large"><i
+-                    class="fa fa-genderless w3-text-red w3-text-white"></i> Gender</label><br>
+-            <input class="w3-radio" type="radio" name="_genderRadio" value="Male" required>Male
+-            <input class="w3-radio" type="radio" name="_genderRadio" value="Female" required>Female
+-            <br><br>
+-            <label style="text-shadow: 1px 1px 0 #f44336; font-weight: 600" class="w3-text-white w3-medium"><i
+-                    class="fa fa-file-photo-o  w3-text-red w3-text-white"></i> Avatar(Coming Soon)</label>
+-            <input type="file" class="w3-input w3-disabled w3-border" name="picUpload" id="picUpload" accept="image/*"
+-                   disabled><br>
+-            <label style="text-shadow: 1px 1px 0 #f44336; font-weight: 600" class="w3-text-white w3-medium"><i
+-                    class="fas fa-user-alt w3-text-red w3-text-white"></i> Username(Email)</label>
+-            <input class="w3-input w3-border" type="email" name="_userField" placeholder="Username *must* be your email"
+-                   required pattern="[A-Za-z][A-Za-z+0-9+@]*.com" title="Email address is invalid!">
+-            <br>
+-            <label style="text-shadow: 1px 1px 0 #f44336; font-weight: 600" class="w3-text-white w3-medium"><i
+-                    class="fa fa-key w3-text-red w3-text-white"></i> Password </label>
+-            <input class="w3-input w3-border" type="password" name="_passField1" placeholder="Enter Password here"
+-                   required pattern="[A-Za-z][A-Za-z+0-9]{6}[A-Za-z+0-9]*[0-9][A-Za-z+0-9]*"
+-                   title="look at the guide below">
+-            <div class="w3-red" style="font-size: 10px">
+-
+-                Should contain letters(Both upper &amp; lower case) numbers, no special characters and at least more
+-                than 6 characters
+-            </div>
+-            <br>
+-            <label style="text-shadow: 1px 1px 0 #f44336; font-weight: 600" class="w3-text-white w3-medium"><i
+-                    class="fa fa-key w3-text-red w3-text-white"></i> Confirm Password</label>
+-            <input class="w3-input w3-border" type="password" name="_passField2" placeholder="Confirm password" required
+-                   pattern="[A-Za-z][A-Za-z+0-9]{6}[A-Za-z+0-9]*[0-9][A-Za-z+0-9]*"
+-                   title="Just like the password entered above">
+-            <br>
+-            <button class="w3-btn-block w3-wide w3-round-xlarge w3-section w3-padding w3-red w3-card-2 w3-border w3-hover-opacity w3-text-white w3-hover-"
+-                    type="submit"><b>Sign Up</b> <i class="fa fa-sign-in"></i>
+-            </button>
+-            <br>
+-            <div class="w3-center w3-padding-12">Already have an account?<br>
+-                <span class="clickable w3-small w3-hover-opacity-off w3-opacity"
+-                      onclick="formNavig('signupForm','signinForm')"><i class="fa fa-chevron-left"></i> Back to sign in</span>
+-            </div>
+-
+-        </form>
+-
+-    </div>
+-
+-    <div id="knownUserNav" class="w3-animate-opacity w3-hide">
+-
+-        <div class="w3-animate-left" id="userTab">
+-            <h4 class="w3-center w3-text-shadow " style="text-decoration: underline">Welcome to GamesCon</h4>
+-
+-            <h6 class="w3-padding-small">The current items in your <i class="fa fa-shopping-cart"></i> are:</h6>
+-            <section id="checkOutContainer">
+-                <br>
+-                <h5 class="w3-center">Your cart is empty!</h5>
+-            </section>
+-
+-            <div class="w3-panel w3-pale-red w3-leftbar w3-border-white w3-small w3-padding-4">
+-                <p>Do note that clicking the button below will forward you to payments and the total money indicated
+-                    would be deducted from your account. </p>
+-                <p>Final step, tread carefullyQ</p>
+-            </div>
+-            <button class="w3-btn-block w3-wide w3-round-xlarge w3-section w3-padding w3-red w3-card-2 w3-border w3-hover-opacity w3-text-white w3-hover-"
+-                    type="" onclick="javascript:alert('End of project,\n\tThanks!');"><b>Finish Transaction</b> <i
+-                    class="fa fa-sign-in"></i>
+-            </button>
+-
+-            <br>
+-
+-        </div>
+-
+-        <form class="w3-form w3-animate-right w3-hide" autocomplete="off"
+-              action="phps/adminAddProduct.php" method="post"
+-              name="adminAdd" id="adminTab" enctype="multipart/form-data">
+-
+-            <fieldset class="w3-padding-0 w3-margin-0 w3-border-0">
+-                <legend class="w3-white w3-text-red w3-padding-small w3-right w3-clear"> Admin Home</legend>
+-                <br><br>
+-
+-                <label style="font-weight:600; text-shadow: 1px 1px 0 #f44336;" class="w3-text-white w3-large"><i
+-                        class="fas fa-box w3-text-red w3-text-white"></i> Category</label>
+-                <select class="w3-select w3-border" name="_categories" required>
+-                    <option value="">Select current category</option>
+-                    <option value="Action/Adventure">Action/Adventure</option>
+-                    <option value="Horror/Creepy">Horror/Creepy</option>
+-                    <option value="Strategy">Strategy</option>
+-                    <option value="Racing/Simulation">Racing/Simulation</option>
+-                </select>
+-                <br><br>
+-
+-                <label style="font-weight:600; text-shadow: 1px 1px 0 #f44336;" class="w3-text-white w3-large"><i
+-                        class="fa fa-info-circle w3-text-red w3-text-white"></i> Title</label>
+-                <input class="w3-input w3-border" type="text" name="_titleField" placeholder="Game name" required
+-                       max="30"><br>
+-
+-                <label style="font-weight:600; text-shadow: 1px 1px 0 #f44336;" class="w3-text-white w3-large"><i
+-                        class="fa fa-money w3-text-red w3-text-white"></i> Price, Kshs.</label>
+-                <input class="w3-input w3-border" type="range" name="_priceField" placeholder="Price in Kshs." required
+-                       min="100" max="10000">
+-                <br>
+-                <label style="text-shadow: 1px 1px 0 #f44336; font-weight: 600" class="w3-text-white w3-medium"><i
+-                        class="fa fa-file-photo-o  w3-text-red w3-text-white"></i> Picture</label>
+-                <input type="file" class="w3-input w3-border" name="gamePicUpload" id="gamePicUpload"
+-                       accept="image/*">
+-                <div class="w3-red" style="font-size: 10px">
+-
+-                    Preferable image ratio is 4:3, always use this image ratio with small less than &#62; 1mbs images
+-                    for
+-                    best results
+-                </div>
+-                <br>
+-                <br>
+-                <input class="w3-btn-block w3-wide w3-round-xlarge w3-section w3-padding w3-red w3-card-2 w3-border w3-hover-shadow w3-hover-opacity w3-text-white w3-hover-"
+-                       type="submit" value="Add data" name="submit">
+-
+-                <br>
+-                <div class="w3-right-align w3-padding-0 w3-margin-0"
+-                >
+-                    <i class="fa fa-chevron-left"></i> <span class="clickable w3-hover-opacity"
+-                                                             onclick="formNavig('adminTab','userTab');"> Go back</span>
+-                </div>
+-            </fieldset>
+-        </form>
+-    </div>
+-
+-</section>
+-
+-
+-<header class="page-bg" id="home">
+-    <div class="hero w3-row-padding w3-clear w3-display-container">
+-
+-        <div class="w3-display-topleft w3-left-align w3-text-white w3-padding-xlarge ">
+-
+-            <h1 class="w3-jumbo cap w3-wide w3-hide-small" style="font-weight: 200">This month's <br>give away</h1>
+-            <div class="w3-hide-large w3-hide-medium w3-padding-64">
+-                <h1 class="w3-xxlarge cap w3-wide" style="font-weight: 200">This month's <br>give away</h1>
+-            </div>
+-
+-        </div>
+-
+-        <div class="w3-display-left w3-hide-small w3-hide-medium w3-padding-large">
+-            <p><a href="javascript:void(0);" onclick="executeTransaction(1235,0,'Astroneer');"
+-                  class="w3-btn w3-padding-large w3-large w3-red">GET IT NOW</a></p>
+-        </div>
+-
+-        <div class="w3-display-bottomleft w3-hide-large  w3-padding-large">
+-            <p><a href="javascript:void(0);" onclick="executeTransaction(1235,0,'Astroneer');"
+-                  class="w3-btn w3-padding-large w3-large w3-red">GET IT NOW</a></p>
+-        </div>
+-
+-        <div class="w3-center w3-text-white w3-padding-large w3-margin-top" id="gameOfYrDesc">
+-            <div class="giveaway-title w3-center w3-round-large ">
+-                <h1 class="w3-padding-0 w3-margin-0">
+-                    Astroneer
+-                </h1>
+-                <span class="w3-small" style="color: #d8b1b6">A space tactical game, with tonnes of ships and planets to explore! </span>
+-            </div>
+-        </div>
+-
+-
+-        <div class="w3-threequarter w3-padding">
+-
+-        </div>
+-
+-        <div class="w3-quarter  w3-right-align w3-text-white w3-red;">
+-            <div class=" w3-hide-small w3-margin-right " id="headerCategories">
+-                <br>
+-                <h4 class="w3-left-align w3-text-shadow">Popular categories: </h4>
+-                <div class="w3-display-container w3-round-xlarge  w3-hover-black">
+-                    <div class="w3-card-2 w3-leftbar w3-round-xlarge w3-topbar w3-border-red">
+-                        <a href="#Action-Adventure" class="scroll-down w3-hover-sepia w3-round-xxlarge">
+-                            <img class="w3-border  w3-border-red w3-round-xxlarge" src="images/cat-a.jpg" width="100%"><br>
+-                            <div class="w3-display-middle w3-center w3-round-xxlarge"
+-                                 style="background-color: rgba(244,67,54,0.33);width: 100%;height: 100%">
+-                                <div class="w3-display-middle">
+-                                    <h4 class="w3-text-shadow"><b>Action/Adventure</b></h4>
+-                                </div>
+-                            </div>
+-                        </a>
+-                    </div>
+-                </div>
+-
+-                <div class="w3-display-container w3-round-large" style="margin: 8px auto">
+-                    <div class="w3-card-2 w3-rightbar w3-border-red w3-round-large">
+-                        <a href="#Horror-Creepy" class="scroll-down w3-round-large">
+-                            <img class="w3-border w3-border-red w3-round-large" src="images/cat-b.jpg" width="100%"><br>
+-                            <div class="w3-display-middle w3-center horror-mode w3-round"
+-                                 style="width: 100%;height: 100%;">
+-                                <div class="w3-display-middle">
+-                                    <h4 class="w3-text-shadow"><b>Horror/Creepy</b></h4>
+-                                </div>
+-                            </div>
+-                        </a>
+-                    </div>
+-                </div>
+-
+-                <div class="w3-round-xlarge w3-display-container w3-hover-black">
+-                    <div class="w3-round-xlarge w3-card-2 w3-leftbar w3-bottombar  w3-border-red">
+-                        <a href="#Strategy" class="scroll-down w3-round-xxlarge w3-hover-sepia">
+-                            <img class="w3-round-xxlarge w3-border w3-border-red" src="images/cat-c.jpg" width="100%"><br>
+-                            <div class="w3-display-middle w3-center w3-round-xxlarge"
+-                                 style="background-color: rgba(244,67,54,0.33);width: 100%;height: 100%">
+-                                <div class="w3-display-middle">
+-                                    <h4 class="w3-text-shadow"><b>Strategy</b></h4>
+-                                </div>
+-                            </div>
+-                        </a>
+-                    </div>
+-                </div>
+-            </div>
+-
+-        </div>
+-    </div>
+-
+-    <section class="w3-display-container" style="position: fixed; right: 20px;top: 90px; z-index: 2;" id="shop_basket">
+-        <div class="w3-tag w3-circle w3-light-gray w3-card-4"
+-             style="padding: 1px 4px; font-size: 8px; margin-left: 36px;top: 1px; position: absolute;  z-index: 6;"
+-             id="cartCount">0
+-        </div>
+-        <div class="w3-dropdown-hover">
+-            <a href="javascript:void(0);" onclick="userAside_Open();"><img src="images/cart.gif" width="40"></a>
+-            <div class="w3-dropdown-content w3-light-gray w3-padding-medium w3-small" style="right: 0"
+-                 id="cart_contents">
+-                Cart is empty<i class="fa fa-close"></i>
+-            </div>
+-        </div>
+-    </section>
+-
+-</header>
+-
+-<nav class="w3-top w3-padding-xlarge wd3-red w3-card-2  nav-anim-1" style="  color: white" id="nav">
+-    <div class="" style="position: absolute; top: 5%">
+-        <img src="images/logo.png" width="128px">
+-    </div>
+-
+-    <ul>
+-        <li>
+-            <div class="hamburger w3-padding-0" onClick="showMenu(this);" id="ham">
+-                <div class="bar1"></div>
+-                <div class="bar2"></div>
+-                <div class="bar3"></div>
+-            </div>
+-        </li>
+-
+-        <li>
+-            <div class="w3-padding-0 w3-margin-0 w3-large" onclick="userAside_Open();">
+-                <i class="fa fa-user-circle fa-2x "></i>
+-            </div>
+-        </li>
+-    </ul>
+-</nav>
+-
+-
+-<div class="w3-overlay w3-animate-opacity" onclick="userAside_Close();" style="cursor:pointer"
+-     id="userAside-overlay"></div>
+-
+-
+-<div id="snackbar" class="w3-center">
+-
+-    <div class="w3-container w3-round-xlarge w3-text-white w3-text-shadow w3-center w3-padding-medium"
+-         style="width:30%;margin: auto; background-color: rgba(244, 67, 54, .8);">
+-        <i class="fa fa-warning"></i>
+-        <br>
+-        You have to be logged in first, in-order to that!
+-    </div>
+-
+-</div>
+-<main class="w3-row page2-bg" style="padding: 0px 0px;margin-bottom: 200px">
+-    <section id="products-panel">
+-
+-        <h5 class="w3-center"><span class="w3-padding-medium w3-red w3-xlarge w3-round">Loading Games</span></h5>
+-        <section class="w3-center" style="margin: auto 45%;">
+-            <br>
+-            <div class="loader"></div>
+-
+-        </section>
+-    </section>
+-    <div id="request" class="w3-padding-32"></div>
+-    <section class="w3-container w3-clear page3-bg w3-padding-64  w3-center w3-text-white" style="margin-bottom: 64px" id="requestPanel">
+-
+-        <h2 style="font-weight: 300" class="w3-la">Are u an avid gamer?</h2>
+-        <p style="font-weight: 100" class="">We'd love to hear your voice, make a request or just say something
+-            below</p>
+-        <br>
+-        <form class="w3-form" style="margin: auto" enctype="text/plain" method="post"
+-              action="mailto:franklineodero@gmail.com"
+-              autocomplete="off">
+-            <input class="w3-input w3-animate-input w3-border w3-text-white w3-text-shadow w3-transparent" type="text"
+-                   style=""
+-                   placeholder="Your name please" required>
+-            <br>
+-            <textarea class="w3-input w3-animate-input w3-transparent w3-border w3-text-white w3-text-shadow"
+-                      type="text"
+-                      style=""
+-                      placeholder="Leave a note here"></textarea>
+-            <br>
+-            <button type="submit" class="w3-transparent w3-input w3-btn-block w3-hover-white  w3-border"
+-                    id="_contactUs"
+-                    value="Send" style="">
+-                Press Send <i class="fa fa-send"></i>
+-            </button>
+-
+-        </form>
+-    </section>
+-
+-    <section style="font-family: mishka,cursive" class="w3-center w3-padding-64 w3-text-white w3-text-shadow w3-xlarge"
+-             id="contact">
+-        Beinvenue
+-        <br>
+-        <i class="fa fa-chevron-down"></i>
+-
+-        <div class="scroll-top">
+-            <a href="#home" class="scroll-up">
+-                <img src="images/go-up.png" width="100px" class="clickable">
+-            </a>
+-        </div>
+-    </section>
+-
+-</main>
+-
+-<footer class="w3-padding-xxlarge w3-red w3-center page4-bg">
+-    <div class="w3-padding-8">
+-        <h4 class="w3-wide">Find us on</h4>
+-        <div class="w3-large social w3-padding-small" style="">
+-            <a class="w3-padding-small" href="https://github.com/Frankline-Sable"><i
+-                    class="fa fa-github "></i></a>
+-            <a class="w3-padding-small" href="https://www.linkedin.com/in/frankline-sable"><i
+-                    class="fa fa-linkedin "></i></a>
+-            <a class="w3-padding-small" href="https://www.youtube.com/channel/UCN_d-ax6_9zPWgSuRUYn-QA"><i
+-                    class="fa fa-youtube-play "></i></a>
+-            <a class="w3-padding-small" href="https://www.instagram.com/lensesable"><i
+-                    class="fa fa-instagram "></i></a>
+-        </div>
+-    </div>
+-    <div class="w3-large w3-text-shadow-white w3-padding-8 w3-text-black w3-center">
+-        <b>&copy;GamesCon 2019</b>
+-    </div>
+-
+-
+-</footer>
+-
+-<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+-
+-<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+-<script src="/__/firebase/6.3.5/firebase-app.js"></script>
+-
+-<!-- Add Firebase products that you want to use -->
+-<script src="/__/firebase/6.3.5/firebase-auth.js"></script>
+-<script src="/__/firebase/6.3.5/firebase-firestore.js"></script>
+-
+-
+-<!-- Initialize Firebase -->
+-<script src="/__/firebase/init.js"></script>
++    <p id="load">Firebase SDK Loading&hellip;</p>
+ 
+-
+-</body>
+-
+-<script src="scripts/main.js" type="text/javascript"></script>
+-<script src="scripts/manage_products.js" type="text/javascript"></script>
++   
++  </body>
+ </html>
